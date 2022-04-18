@@ -1,0 +1,109 @@
+body{
+    background-color: #2f2fa2;
+    font-family: 'Roboto', sans-serif;
+
+}
+.login-box{
+    width: 360px;
+    height: 620px;
+    margin: auto;
+    background-color:#2f2fa2;
+    border-radius: 3px;
+
+}
+h1{
+    text-align: center;
+    color: white;
+    padding-top: 15px;
+
+}
+h4{
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+h5{
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+form{
+    width: 300px;
+    margin-left: 20px;
+
+}
+
+form input{
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border: 1px solid gray;
+    border-radius: 6px;
+    outline: none;
+    margin-bottom: 15px;
+
+}
+input[type="button"]{
+    width: 320px;
+    height: 35px;
+    margin-top: 20px;
+    border: none;
+    background-color: #F64C72;
+    color: white;
+    font-size: 18px;
+}
+.forget{
+    margin: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: white;
+    
+}
+.seperator{
+    width: 85%;
+    border-top: 1px solid #f1f1f1;
+    border-bottom: 1px solid #f1f1f1;
+    padding: 10px;
+    text-align: center;
+    margin: 20px;
+    font-size: 15px;
+    color: white;
+}
+.facebook-login{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.google-login{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.google-login a{
+    display: inline-block;
+    background-color: #db4437;
+    color: white;
+    padding: 10px;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+}
+.facebook-login a{
+    display: inline-block;
+    background-color: #4267b2;
+    color: white;
+    padding: 10px;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+}
+p{
+    text-align: center;
+    color: white;
+    padding-top: 20px;
+    font-size: 15px;
+}
