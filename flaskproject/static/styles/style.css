@@ -1,0 +1,253 @@
+:root{
+    /* ===== Colors ===== */
+    --primary-color: #0E4BF1;
+    --background-color: #f6f6f9;
+    --panel-color: #FFF;
+    --text-color: #000;
+    --black-light-color: #707070;
+    --border-color: #e6e5e5;
+    --toggle-color: #DDD;
+    --box1-color: #4DA3FF;
+    --box2-color: #FFE6AC;
+    --box3-color: #E7D1FC;
+    --title-icon-color: #fff;
+    --color-dark: #fafafa;
+    /* ====== Transition ====== */
+    --tran-05: all 0.5s ease;
+    --tran-03: all 0.3s ease;
+    --tran-03: all 0.2s ease;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    font-family: poppins, sans-serif;
+    font-size: 0.88rem;
+    background: var(--background-color);
+    user-select: none;
+    overflow-x: hidden;
+ }
+
+ .container{
+     display: grid;
+     width: 96%;
+     margin: 0 auto;
+     gap: 1.8rem;
+     grid-template-columns: 14rem auto 23rem;
+ }
+
+ img{
+     display: block;
+     width: 100%;
+ }
+
+ .sidebar .links{
+    list-style-type: none;
+ }
+
+ a{
+     color: var(--color-dark)
+ }
+ 
+ aside{
+     height: 100vh;
+     background: #f7f6f6;
+ }
+
+ aside .top{
+     background: white;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     margin-top: 1.4rem;
+ }
+
+ aside.logo{
+     display: flex;
+ }
+
+ aside .logo img {
+     width: 2rem;
+     height: 2rem;
+ }
+
+ aside .close{
+     display: none;
+ }
+ 
+ aside .sidebar{
+     background: #DDD;
+     display: flex;
+     flex-direction: column;
+     height: 86vh;
+     position: relative;
+     top: 3rem
+ }
+
+
+
+ .sidebar li a{
+ display: flex;
+ color: var(--color-dark);
+ gap: 1rem;
+transition: all 300ms ease;
+ align-items: center;
+ height: 3.7rem;
+ text-decoration: none;
+ position: relative;
+}
+
+.sidebar li a i{
+    font-size: 24px;
+    min-width: 45px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--black-light-color);
+}
+
+aside .sidebar a span{
+    font-size: 1.4rem;
+    color: var(--black-light-color);
+   transition: all 300ms ease;
+}
+
+aside .sidebar li:last-child {
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+}
+
+aside .sidebar li a:active{
+    background: var(--black-light-color);
+    color: var(--primary-color);
+    margin-left: 0;
+}
+
+aside .sidebar li:before{
+    list-style: none;
+    content: "";
+    position: absolute;
+    width: 100%;
+    background-color: var(--primary-color);
+   
+}
+
+aside .sidebar li a:active span{
+    color: var(--panel-color);
+    margin-left: calc(1rem - 3px);
+}
+
+aside .sidebar li:hover {
+    color: var(--panel-color);
+    background-color: var(--primary-color);
+}
+
+aside .sidebar li a:hover span{
+    margin-left: 1rem;
+
+}
+
+.right{
+    margin-top: 1.4rem;
+}
+
+.right .top{
+    display: flex;
+    justify-content: end;
+    gap: 2rem;
+    
+}
+
+.right .top button{
+    display: none;
+}
+
+
+
+@media screen and (max-width: 1200px){
+    .container{
+        width: 94%;
+        grid-template-columns: 7rem auto 23rem;
+    }
+
+   aside .sidebar li a{
+       width: 5.6rem;
+   }
+
+   aside .sidebar li a:last-child{
+       position: realtive;
+       margin-top: 1.8rem;
+   }
+
+
+}
+@media screen and (max-width: 768px){
+    .container{
+        width: 100%;
+    }
+
+    aside{
+        position: fixed;
+        left: 0;
+        background: var(--panel-color);
+        width: 18rem;
+        z-index:3;
+        box-shadow: 1rem 3rem 4rem var(--black-light-color);
+        height: 100vh;
+        padding-right: var(--black-light-color);
+        display: none;
+        animation: showMenu 400ms ease forwards;
+    }
+
+    @keyframes showMenu{
+        to {
+            left: 0;
+        }
+    }
+
+    aside .logo{
+        margin-left: 1rem;
+    }
+
+
+
+    aside .close{
+        display: inline-block;
+        cursor: pointer;
+        font-size: 2rem;
+    }
+
+    .right{
+        width: 94%;
+        margin: 0 auto 4rem;
+    }
+
+    .right .top{
+        position: fixed;
+        top: 0;
+        left: 0;
+        align-items: center;
+        padding: 0 0.8rem;
+        height: 4.6rem;
+        background: var(--primary-color);
+        width: 100%;
+        margin: 0;
+        z-index: 2;
+        box-shadow: 0 1rem 1rem var(--color-dark) ;
+    }
+
+    .right .top button{
+        display: inline-block;
+        border: none;
+        cursor: pointer;
+        color: var(--text-color);
+        position: absolute;
+        left: 1rem;
+    }
+
+    .right .top button span{
+        font-size: 2rem;
+    }
+}

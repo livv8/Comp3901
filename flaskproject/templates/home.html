@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<title>{% block title %}Home{% endblock %}</title>
+
+
+<span class="anchor" id="carousel"></span>
+<section class="carousel" >
+  <div class="row">
+    <div class="col-md-12">
+      <div class="container">
+        <form action="" class="homesearch">
+          <div class="input-group mb-3 ">
+              <input type="text" class="form-control form-control-lg" placeholder="Search Here">
+              <button type="submit" class="input-group-text btn-primary"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </div>
+      </form>
+  <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel" >
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner" data-bs-interval="10000">
+      <div class="carousel-item active">
+        <img src="static/images/pics/sneaks.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption  d-md-block">
+          <h5>Sneakers</h5>
+          <p>Reccomended Products</p>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="10000">
+        <img src="static/images/pics/camera1.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption  d-md-block">
+          <h5>Camera</h5>
+          <p>Best Sellers.</p>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="10000">
+        <img src="static/images/pics/headphones.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption  d-md-block">
+          <h5>Pants</h5>
+          <p>Top Sellers</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="featured" >
+  <div class="row">
+    <div class="col-12">
+      <div class="container">
+  <div class="text-center mx-auto">
+    <h2>Featured Products</h2>
+  </div>
+  
+  
+  <div class="container mt-5 mb-5">
+    <div class="row g-2">
+        <div class="col-md-4 d-flex justify-content-center">
+            <div class="card p-2">
+                <div class="text-center"> <img src="static/images/pics/watch.jpg" class="img-fluid" width="200" /> </div>
+                <div class="content">
+                    <div class="d-flex justify-content-between align-items-center"> <span class="category">Watch</span> <span class="price">$599</span> </div>
+                    <p>Dell Astro 3044</p>
+                    <div class="buttons d-flex justify-content-center"> <button class="btn btn-outline-primary mr-1">Details</button></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 d-flex justify-content-center">
+            <div class="card p-2">
+                <div class="text-center"> <img src="static/images/pics/speakers.jpg" class="img-fluid" width="200" /> </div>
+                <div class="content">
+                    <div class="d-flex justify-content-between align-items-center"> <span class="category">Laptop</span> <span class="price">$799</span> </div>
+                    <p>Dell Astro 3434</p>
+                    <div class="buttons d-flex justify-content-center"> <button class="btn btn-outline-primary mr-1">Details</button></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 d-flex justify-content-center">
+            <div class="card p-2">
+                <div class="text-center"> <img src="https://i.imgur.com/6c6dloN.png" class="img-fluid" width="200" /> </div>
+                <div class="content">
+                    <div class="d-flex justify-content-between align-items-center"> <span class="category">Laptop</span> <span class="price">$999</span> </div>
+                    <p>Dell Latitude 3340</p>
+                    <div class="buttons d-flex justify-content-center"> <button class="btn btn-outline-primary mr-1">Details</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+  
+  <div class="container mt-5 mb-5">
+    <div class="row g-2">
+        <div class="col-md-4 d-flex justify-content-center">
+            <div class="card p-2">
+                <div class="text-center"> <img src="https://i.imgur.com/Sp5bXsO.png" class="img-fluid" width="200" /> </div>
+                <div class="content">
+                    <div class="d-flex justify-content-between align-items-center"> <span class="category">Laptop</span> <span class="price">$599</span> </div>
+                    <p>Dell Astro 3044</p>
+                    <div class="buttons d-flex justify-content-center"> <button class="btn btn-outline-primary mr-1">Details</button></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 d-flex justify-content-center">
+            <div class="card p-2">
+                <div class="text-center"> <img src="https://i.imgur.com/LaGzgLp.png" class="img-fluid" width="200" /> </div>
+                <div class="content">
+                    <div class="d-flex justify-content-between align-items-center"> <span class="category">Laptop</span> <span class="price">$799</span> </div>
+                    <p>Dell Astro 3434</p>
+                    <div class="buttons d-flex justify-content-center"> <button class="btn btn-outline-primary mr-1">Details</button></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 d-flex justify-content-center">
+            <div class="card p-2">
+                <div class="text-center"> <img src="https://i.imgur.com/6c6dloN.png" class="img-fluid" width="200" /> </div>
+                <div class="content">
+                    <div class="d-flex justify-content-between align-items-center"> <span class="category">Laptop</span> <span class="price">$999</span> </div>
+                    <p>Dell Latitude 3340</p>
+                    <div class="buttons d-flex justify-content-center"> <button class="btn btn-outline-primary mr-1">Details</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</section>
+
+
+
+{% endblock %}

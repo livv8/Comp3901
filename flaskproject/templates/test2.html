@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100" rel="stylesheet" />
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <aside>
+            <div class="top">
+                <div class="logo">
+                    <img src="static/images/locatix-logo-black.png" alt="logo">
+
+                </div>
+                <div class="close" id="close-btn">
+                    <span> <i class="fa-solid fa-xmark"></i> </span>
+
+                </div>
+            </div>
+            <div class="sidebar">
+                <ul class="links">
+                    <li><a href="#">
+                        <i class="fa-solid fa-house-user"></i>
+                        <span class="link-name">Dahsboard</span>
+                    </a></li>
+                    <li><a href="#Products">
+                      <i class="fa-solid fa-basket-shopping"></i>                 
+                      <span class="link-name">Products</span>
+                    </a></li>
+                    <li><a href="#">
+                        <i class="fa-solid fa-store"></i>
+                        <span class="link-name">Stores</span>
+                    </a></li>
+                    <li><a href="#">
+                        <i class="fa-solid fa-square-plus"></i>
+                        <span class="link-name">Add Product</span>
+                    </a></li>
+                    <li><a href="#">
+                        <i class="fa-solid fa-gears"></i>
+                        <span class="link-name">Settings</span>
+                    </a></li>
+      
+                    <li><a href="#">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        <span class="link-name">Logout</span>
+                    </a></li>
+            </div>
+        </aside>
+    </div>
+
+    <div class="right">
+        <div class="top">
+            <button id="menu-btn">
+                <span class="material-symbols-outlined">
+                    menu
+                    </span>            </button>
+            
+        </div>
+    </div>
+<div class="card" style="width: 18rem;"> <div class="card-body"> <h5 class="card-title">Card title</h5> <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> <a href="#" class="card-link">Card link</a> <a href="#" class="card-link">Another link</a> </div> </div>
+    
+    <script src="./index.js">
+
+    </script>
+</body>
+</html>
