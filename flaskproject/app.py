@@ -16,11 +16,11 @@ app.config['MYSQL_DB'] = 'locatix'
 
 mysql = MySQL(app)
 
-@app.route("/base")
+@app.route("/")
 def base():
-    return render_template("base.html")
+    return render_template("start.html")
 
-@app.route("/", methods=['GET', 'POST'])
+@app.route("/login", methods=['GET', 'POST'])
 def login():
      # Output message if something goes wrong...
     msg = ''
