@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,500&display=swap');
+
+
+
+body{
+    background-image: url("https://images.unsplash.com/photo-1620121692029-d088224ddc74?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80");
+    background-repeat: no-repeat;
+    font-family: 'Fira Sans', sans-serif;
+    background-position: center center;
+     background-attachment: fixed;
+        background-size:cover ;
+}
+
+.container {
+    position: relative;
+    bottom: 50%; 
+    margin: 0 auto;
+    padding-top: 500px;
+    width: 400px;
+}
+
+h1{
+    font-size: 100px;
+    
+}
+
+@media only screen and (max-width: 768px) {
+    .container{
+        padding: 60px;
+    }
+
+    h1{
+        font-size: 70px;
+        
+    }
+}
