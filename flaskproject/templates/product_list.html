@@ -1,0 +1,88 @@
+{% extends 'adminbase.html' %} {% block content %}
+
+<div class="col py-3">
+  <h1>Products Table</h1>
+  <form class="d-flex container">
+    <input class="form-control me-2" type="search" placeholder="Search " aria-label="Search" style="width: 16rem;" />
+    <button class="btn btn-primary" type="submit">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+  </form>
+  <select id="cars" name="cars" style="float: right; padding-right: 3px;">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="fiat">Fiat</option>
+    <option value="audi">Audi</option>
+  </select>
+
+  <select id="cars" name="cars" style="float: right;">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="fiat">Fiat</option>
+    <option value="audi">Audi</option>
+  </select>
+  {{ pagination.info }}
+  {{ pagination.links }}
+  <table id='data' class="table align-middle mb-0 bg-white">
+    <thead class="bg-light table-dark">
+      <tr>
+        <th scope="col">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+          </div>
+        </th>
+        <th>Item Number</th>
+        <th>Product Title</th>
+        <th>Department</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Status</th>
+      </tr>
+    </thead>{% for item in data %}
+    <tbody>
+      <tr>
+        <th scope="row">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+          </div>
+        </th>
+        <th scope="row">{{item.Item_Number}}</th>
+
+        <td>
+          <p>{{item.Item_Description}}</p>
+
+        </td>
+        <td>
+          <p>{{item.Department}}</p>
+        </td>
+        <td>{{item.Qty}}</td>
+        <td>{{item.Price}}</td>
+        <td>
+          <span class="badge badge-success rounded-pill d-inline">Active</span>
+        </td>
+        <td>
+          <button type="button" class="btn btn-sm btn-rounded" style="background-color:#48D985 ;">
+            Available
+          </button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-link btn-sm btn-rounded">
+            Edit
+          </button>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {{ pagination.links }}
+</div>
+
+{% endblock %}
+</section>
+
+
+
+</body>
+
+</html>

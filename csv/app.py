@@ -1,8 +1,9 @@
 from flask import Flask, render_template, request, redirect, url_for
+from flask_mysqldb import MySQL
 import os
 from os.path import join, dirname, realpath
 import csv
-import mysql.connector
+import MySQLdb.cursors
 
 app = Flask(__name__)
 
@@ -11,12 +12,13 @@ app.config['DEBUG'] = True
 UPLOAD_FOLDER = 'static/files'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 #database
-mydb = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="",
-    database="inventory"
-)
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = ''
+app.config['MYSQL_DB'] = 'inventory'
+
+mysql = MySQL(app)
+
 print('database connected')
 
 #Root url
@@ -33,13 +35,14 @@ def upload():
         #set the file path
         uploaded_file.save(file_path)
         #save the file
-        cursor =mydb.cursor()
-    csv_data = csv.reader(open(file_path))
+        cursor =mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        csv_data = csv.reader(open(file_path))
     for row in csv_data:
-        cursor.execute("""INSERT INTO ohs (Item_Number, Item_Description, Qty, Price, Department) VALUES (%s, %s, %s, %s, %s)""",row)
+        cursor.execute("""CREATE TABLE IF NOT EXISTS `inventory_fil_i_tech` (`Item_Number` varchar(11), `Item_Description` varchar(94), `Qty` varchar(5), `Price` varchar(10), `Department` varchar(22)) DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;;""")
+        cursor.execute("""INSERT INTO inventory_fil_i_tech  (Item_Number, Item_Description, Qty, Price, Department) VALUES (%s, %s, %s, %s, %s)""",row)
     print(row)
 
-    mydb.commit()
+    mysql.commit()
     cursor.close()
     print("DONE")
 
