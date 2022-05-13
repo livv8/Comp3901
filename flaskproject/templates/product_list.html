@@ -1,28 +1,7 @@
-{% extends 'adminbase.html' %} {% block content %}
 
 <div class="col py-3">
-  <h1>Products Table</h1>
-  <form class="d-flex container">
-    <input class="form-control me-2" type="search" placeholder="Search " aria-label="Search" style="width: 16rem;" />
-    <button class="btn btn-primary" type="submit">
-      <i class="fa-solid fa-magnifying-glass"></i>
-    </button>
-  </form>
-  <select id="cars" name="cars" style="float: right; padding-right: 3px;">
-    <option value="volvo">Volvo</option>
-    <option value="saab">Saab</option>
-    <option value="fiat">Fiat</option>
-    <option value="audi">Audi</option>
-  </select>
 
-  <select id="cars" name="cars" style="float: right;">
-    <option value="volvo">Volvo</option>
-    <option value="saab">Saab</option>
-    <option value="fiat">Fiat</option>
-    <option value="audi">Audi</option>
-  </select>
-  {{ pagination.info }}
-  {{ pagination.links }}
+
   <table id='data' class="table align-middle mb-0 bg-white">
     <thead class="bg-light table-dark">
       <tr>
@@ -75,10 +54,8 @@
       {% endfor %}
     </tbody>
   </table>
-  {{ pagination.links }}
 </div>
 
-{% endblock %}
 </section>
 
 

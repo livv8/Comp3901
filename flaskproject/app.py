@@ -1,10 +1,15 @@
-from flask import Flask, render_template, request, redirect, url_for, session, Blueprint
+from ctypes.wintypes import MSG
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 from flask_mysqldb import MySQL
 from authlib.integrations.flask_client import OAuth
 from flask_paginate import Pagination, get_page_parameter
 from passlib.hash import sha256_crypt
 import MySQLdb.cursors
 import re
+import os
+from os.path import join, dirname, realpath
+import csv
+import MySQLdb.cursors
 
 
 app = Flask(__name__)
@@ -13,14 +18,43 @@ app.config['DEBUG']= True
 
 app.secret_key = 'your secret key'
 
-
+#upload file
+UPLOAD_FOLDER = 'static/files'
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 # Enter your database connection details below
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = ''
 app.config['MYSQL_DB'] = 'inventory'
+app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
+
 
 mysql = MySQL(app)
+
+#Root url
+@app.route("/up")
+def index():
+    return render_template('upload.html')
+
+#get the upload files
+@app.route('/up', methods =['POST'])
+def upload():
+    msg = ''
+    uploaded_file = request.files['file']
+    if uploaded_file.filename != '':
+        file_path = os.path.join(app.config['UPLOAD_FOLDER'], uploaded_file.filename)
+        #set the file path
+        uploaded_file.save(file_path)
+        #save the file
+        cursor =mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        csv_data = csv.reader(open(file_path))
+    for row in csv_data:
+        cursor.execute("""CREATE TABLE IF NOT EXISTS `acrostra` ( `Item_Number` varchar(94), `Item_Description` varchar(20), `Qty` varchar(10), `Price` varchar(22),`Department` varchar(22)) DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;;""")
+        cursor.execute("""INSERT INTO `acrostra` (Item_Number, Item_Description, Qty, Price, Department) VALUES ( %s, %s, %s, %s, %s)""",row)
+    print(row)
+    msg='File uploaded'
+    cursor.close()
+    return redirect(url_for("index", msg=msg))
 
 @app.route("/")
 def base():
@@ -140,7 +174,7 @@ def home():
     # if 'loggedin' in session:
     #     # User is loggedin show them the home page
     #     return render_template('home.html', username=session['username'])
-    # # User is not loggedin redirect to login page
+    # User is not loggedin redirect to login page
     user = session.get('user')
     return render_template("home.html")
     
@@ -153,12 +187,75 @@ def details():
 def test():
     return render_template("categories.html")
 
-@app.route("/start")
-def start():
-    return render_template("start.html")
+@app.route("/search")
+def search():
+     # search = False
+    q = request.args.get('q')
+    if q:
+        search = True
 
-@app.route("/product_list")
+    page = request.args.get(get_page_parameter(),default= 1, type=int)
+    limit = 6
+    offset = page*limit - limit
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+     
+    cursor.execute("SELECT * FROM  `inventory_fil_i_tech` ORDER By Item_Number ASC LIMIT %s OFFSET %s", (limit, offset))
+    data=cursor.fetchall()
+    total = cursor.execute("SELECT * FROM `inventory_fil_i_tech` WHERE 1;")
+    cursor.close()
+    
+    pagination = Pagination(page=page,per_page=limit, total=total, record_name='data')
+    return render_template("productsview.html", pagination=pagination, data = data)
+
+@app.route("/products",methods=["POST","GET"])
 def products():
+    cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    if request.method == 'POST':
+        search_word = request.form['query']
+        print(search_word)
+        if search_word == '':
+            query = "SELECT * from inventory_fil_i_tech ORDER BY Item_Description"
+            cur.execute(query)
+            data = cur.fetchall()
+        else:    
+            query = "SELECT * from inventory_fil_i_tech WHERE Item_Description LIKE '%{}%' OR Price LIKE '%{}%' OR Qty LIKE '%{}%' ORDER BY Item_Description DESC LIMIT 20".format(search_word,search_word,search_word)
+            cur.execute(query)
+            numrows = int(cur.rowcount)
+            data = cur.fetchall()
+            print(numrows)
+
+
+   
+    return jsonify({'htmlresponse':  render_template("search.html",numrows=numrows, data=data)})
+
+
+@app.route("/stores")
+def stores():
+    return render_template("stores.html")    
+
+@app.route("/old_harbour")
+def old():
+     # Set the pagination configuration
+    search = False
+    q = request.args.get('q')
+    if q:
+        search = True
+
+    page = request.args.get(get_page_parameter(),default= 1, type=int)
+    limit = 6
+    offset = page*limit - limit
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+     
+    cursor.execute("SELECT * FROM  `inventory_fil_i_tech` ORDER By Item_Number ASC LIMIT %s OFFSET %s", (limit, offset))
+    data=cursor.fetchall()
+    total = cursor.execute("SELECT * FROM `inventory_fil_i_tech` WHERE 1;")
+    cursor.close()
+    
+    pagination = Pagination(page=page,per_page=limit, total=total, record_name='data')
+    return render_template("Old_Harbour.html", pagination=pagination, data=data) 
+
+@app.route("/passthru")
+def passthru():
     # Set the pagination configuration
     search = False
     q = request.args.get('q')
@@ -166,38 +263,58 @@ def products():
         search = True
 
     page = request.args.get(get_page_parameter(),default= 1, type=int)
-    limit = 20
+    limit = 6
     offset = page*limit - limit
     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
      
-    cursor.execute("SELECT * FROM  `inventory_fil_i_tech` ORDER By Item_Number ASC LIMIT %s OFFSET %s", (limit, offset))
+    cursor.execute("SELECT * FROM  `passthru` ORDER By Item_Number ASC LIMIT %s OFFSET %s", (limit, offset))
     data=cursor.fetchall()
-    total = cursor.execute("SELECT * FROM `inventory_fil_i_tech` WHERE 1;")
+    total = cursor.execute("SELECT * FROM `passthru` WHERE 1;")
     cursor.close()
     
     pagination = Pagination(page=page,per_page=limit, total=total, record_name='data')
-    return render_template("product_list.html", pagination=pagination, data=data)
+    return render_template("Passthru.html", pagination = pagination, data=data) 
 
-    
-@app.route('/productslist')
-def productlist():
+@app.route("/lupin")
+def lupin():
+    # Set the pagination configuration
     search = False
     q = request.args.get('q')
     if q:
         search = True
 
     page = request.args.get(get_page_parameter(),default= 1, type=int)
-    limit = 20
+    limit = 6
     offset = page*limit - limit
     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
      
-    cursor.execute("SELECT * FROM  `inventory_fil_i_tech` ORDER By Item_Number ASC LIMIT %s OFFSET %s", (limit, offset))
+    cursor.execute("SELECT * FROM  `lupin` ORDER By Item_Number ASC LIMIT %s OFFSET %s", (limit, offset))
     data=cursor.fetchall()
-    total = cursor.execute("SELECT * FROM `inventory_fil_i_tech` WHERE 1;")
+    total = cursor.execute("SELECT * FROM `lupin` WHERE 1;")
     cursor.close()
     
     pagination = Pagination(page=page,per_page=limit, total=total, record_name='data')
-    return render_template("products2.html", pagination=pagination, data=data)
-        
+    return render_template("lupin.html", pagination=pagination, data=data) 
+
+@app.route("/acrostra")
+def acrostra():
+     # Set the pagination configuration
+    search = False
+    q = request.args.get('q')
+    if q:
+        search = True
+
+    page = request.args.get(get_page_parameter(),default= 1, type=int)
+    limit = 6
+    offset = page*limit - limit
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+     
+    cursor.execute("SELECT * FROM  `acrostra` ORDER By Item_Number ASC LIMIT %s OFFSET %s", (limit, offset))
+    data=cursor.fetchall()
+    total = cursor.execute("SELECT * FROM `acrostra` WHERE 1;")
+    cursor.close()
+    
+    pagination = Pagination(page=page,per_page=limit, total=total, record_name='data')
+    return render_template("Acrostra.html", pagination=pagination, data=data) 
 if __name__ == '__main__':
     app.run(port=500)

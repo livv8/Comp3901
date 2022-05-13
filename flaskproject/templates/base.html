@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/productdetails.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/categorie.css')}}">
-    
-    <link rel="stylesheet" href="static/styles/page.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/cardlist.css')}}">
+
     <title>{% block title %} my webpage {% endblock %}</title>
     {% endblock %}
 </head>
@@ -30,10 +30,10 @@
                 <a class="nav-link" href="#">BestSellers</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('products') }}">Products</a>
+                <a class="nav-link" href="{{ url_for('search') }}">Products</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Contact Us</a>
+                <a class="nav-link" href="stores">Stores</a>
               </li>
            </ul>
            <form class="d-flex">
@@ -73,16 +73,16 @@
                             </div>
                             <ul>
                               <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                <a class="nav-link active" aria-current="page" href="home">Home</a>
                               </li>
                               <li class="nav-item">
                                 <a class="nav-link" href="#">BestSellers</a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link" href="#">Products</a>
+                                <a class="nav-link" href="search">Products</a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link" href="#">Contact Us</a>
+                                <a class="nav-link" href="stores">Stores</a>
                               </li>
                             </ul>
                         </div>
@@ -102,11 +102,11 @@
                     <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
                         <div class="footer-menu">
                             <ul>
-                                <li><a href="#">Home</a></li>
+                                <li><a href="home">Home</a></li>
                                 <li><a href="#">Terms</a></li>
                                 <li><a href="#">Privacy</a></li>
                                 <li><a href="#">Policy</a></li>
-                                <li><a href="#">Contact</a></li>
+                                <li><a href="store">Stores</a></li>
                             </ul>
                         </div>
                     </div>

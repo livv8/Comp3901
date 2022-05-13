@@ -38,11 +38,10 @@ def upload():
         cursor =mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         csv_data = csv.reader(open(file_path))
     for row in csv_data:
-        cursor.execute("""CREATE TABLE IF NOT EXISTS `inventory_fil_i_tech` (`Item_Number` varchar(11), `Item_Description` varchar(94), `Qty` varchar(5), `Price` varchar(10), `Department` varchar(22)) DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;;""")
-        cursor.execute("""INSERT INTO inventory_fil_i_tech  (Item_Number, Item_Description, Qty, Price, Department) VALUES (%s, %s, %s, %s, %s)""",row)
+        cursor.execute("""CREATE TABLE IF NOT EXISTS `Passthru` ( `Item_Name` varchar(94), `Department` varchar(20), `Qty` varchar(10), `Price` varchar(22)) DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;;""")
+        cursor.execute("""INSERT INTO `Passthru` (Item_Name, Department, Qty, Price) VALUES ( %s, %s, %s, %s)""",row)
     print(row)
 
-    mysql.commit()
     cursor.close()
     print("DONE")
 

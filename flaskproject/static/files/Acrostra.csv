@@ -1,0 +1,100 @@
+Item Number,Item Description,Qty ,Price,Department Name
+1,"Acer Swift 3 Thin & Light Laptop | 14"" Full HD IPS 100% sRGB Display ",21,"$94,241 ",Computer
+2,"Acer Swift X SFX14-41G-R1S6 Creator Laptop | 14"" Full HD 100% sRGB ",28,"$71,233 ",Computer
+3,Asus ZenBook Flip 13 UX362FA Laptop (8th Gen Core i7/ 8GB/ 512GB SSD/ Win10),10,"$84,402 ",Computer
+4,Asus ZenBook Flip 14 UM462DA-AI501TS Laptop (AMD Quad Core R5/ 8GB/ 512GB SSD/ Win10),11,"$81,305 ",Computer
+5,Asus ROG Strix Scar III G531GU-ES016T Gaming Laptop (9th Gen Core i7/ 16GB/ 1TB SSD/ Win10/ 6GB Graph),30,"$83,776 ",Computer
+6,Asus ROG Strix G G731GT-AU041T Gaming Laptop (9th Gen Core i5/ 8GB/ 512GB SSD/ Win10/ 4GB Graph),26,"$129,832 ",Computer
+7,HP EliteBook x360 (4SU65UT) Laptop (8th Gen Core i5/ 8GB/ 1TB 256GB SSD/ 8GB EMMC/ Win10/ 2GB Graph),26,"$97,201 ",Computer
+8,Asus ZenBook 14 UM431DA Laptop (3rd Gen Ryzen 5/ 8GB/ 512GB SSD/ Win10),16,"$61,328 ",Computer
+9,Acer Nitro AN515-54 (NH.Q5BSI.002) Gaming Laptop (9th Gen Core i7/ 8GB/ 2TB 256GB SSD/ Win10/ 6GB Graph),14,"$78,977 ",Computer
+10,HP 15-di0002tu (8WN01PA) Laptop (7th Gen Core i3/ 4GB/ 1TB HDD/ Win10),23,"$144,140 ",Computer
+11,HP 250 G7 (7HA07PA) Laptop (7th Gen Core i3/ 2GB/ 1TB 1TB SSD/ Win10),20,"$131,663 ",Computer
+12,Dell Inspiron 15 3583 Laptop (7th Gen Pentium Gold/ 4GB/ 1TB/ Win10),15,"$112,419 ",Computer
+13,HP 15-db0244au Laptop (AMD A9/ 4 GB/ 1 TB/ Win 10),22,"$145,727 ",Computer
+14,Lenovo Ideapad 130 81H700BUIN Laptop (7th Gen Core i3/ 4GB/ 1TB/ Win 10),21,"$132,280 ",Computer
+15,HP 250 G7 (7HA07PA) Laptop (7th Gen Core i3/ 4GB/ 1TB/ Win10),12,"$31,524 ",Computer
+16,Lenovo Legion Y540 (81SY00C8IN) Gaming Laptop (9th Gen Core i7/ 16GB/ 1TB SSD/ Win10/ 4GB Graph),27,"$111,356 ",Computer
+17,Dell Inspiron 15 5584 Laptop (8th Gen Core i5/ 8GB/ 2TB/ Win10/ 2GB Graph),24,"$79,256 ",Computer
+18,Acer Predator Triton 700 (NH.Q2KSI.002) Gaming Laptop (7th Gen Core i7/ 16GB/ 1TB SSD/ Win10/ 6GB Graph),12,"$121,417 ",Computer
+19,Lenovo Ideapad S540 (81NE00AQIN) Laptop (8th Gen Core i5/ 8GB/ 512GB SSD/ Win10/ 2GB Graph),25,"$79,837 ",Computer
+20,MSI Modern 14 A10RB-651IN Laptop (10th Gen Core i7/ 8GB/ 512GB SSD/ Win10/ 2GB Graph),13,"$66,846 ",Computer
+21,TOZO T6 True Wireless Earbuds Bluetooth Headphones Touch Control with Wireless Charging Case IPX8 Waterproof Stereo Earphones in-Ear Built-in Mic Headset Premium Deep Bass for Sport Black ,16,"$8,419 ",Earphones
+22,GOLREX Bluetooth Headphones Wireless Earbuds with Wireless Charging Case & Dual LED Battery Display 36Hrs Playback Over-Ear Waterproof Earphones with Earhooks Headset Built-in Mic for Sport Black ,28,"$3,002 ",Earphones
+23,Beats Studio Buds Totally Wireless Noise Cancelling Earphones - Black (Renewed) ,24,"$3,660 ",Earphones
+24,"Bluetooth Headphones, Deep Bass Wireless Running Headphones w/16 Hrs Playtime, Bluetooth Earbuds in-Ear w/Earhooks, IPX7 Waterproof Sports Earphones with Microphone for Calls ",24,"$8,276 ",Earphones
+25,"Wireless Trackball Mouse, Rechargeable Ergonomic Mouse, Easy Thumb Control, Precise & Smooth Tracking, 3 Device Connection (Bluetooth or USB), Compatible for PC, Laptop, iPad, Mac, Windows, Android ",18,"$4,213 ",ACCESSORIES
+26,Echo (4th Gen) | Charcoal with Sengled Bluetooth Color bulb | Alexa smart home starter kit ,24,"$6,373 ",ACCESSORIES
+27,Poly Voyager 5200 Bluetooth Headset (Plantronics) - Single-Ear (Mono) Bluetooth Earpiece with Noise Canceling Mic - Cell/Mobile Phone Headset ,18,"$4,709 ",Earphones
+28,"Bluetooth Headset, Sarevile Bluetooth Trucker Headset with Upgraded Microphone Noise Canceling for Trucker, Hand Free Wireless Headset with Adapter for Office Meeting. Widely Compatible for Computer ",22,"$3,452 ",Earphones
+29,"Earbuds Headphones Wired Stereo Sound Earphones for iPhone with Microphone and Volume Control,Active Noise Cancellation Compatible with iPhone 13 12 11 8 7Plus Pro Max X XS Max (White) ",25,"$6,919 ",Earphones
+30,"Sony ZX Series Wired On-Ear Headphones, Black MDR-ZX110 ",12,"$4,905 ",Earphones
+31,OneOdio Wired Over Ear Headphones Studio Monitor & Mixing DJ Stereo Headsets with 50mm Neodymium Drivers and 1/4 to 3.5mm Audio Jack for AMP Computer Recording Phone Piano Guitar Laptop - Black ,13,"$7,935 ",Earphones
+32,Apple EarPods with Lightning Connector - White ,21,"$8,360 ",Earphones
+33,"Panasonic Headphones, Lightweight Over the Ear Wired Headphones with Clear, High-Quality Sound and XBS for Extra Bass, Long Cord, 3.5mm Jack for Phones and Laptops ? RP-HT161-K (Black) ",19,"$5,307 ",Earphones
+34,"Wireless Headphones, Otium Bluetooth Running Headphones Sports Earbuds, IPX7 Waterproof Stereo Earphones for Gym Running 10 Hours Playtime Noise Cancelling Headsets ",20,"$4,677 ",Earphones
+35,Apple AirPods (2nd Generation) ,17,"$7,063 ",Earphones
+36,"Gaming Headset with Microphone, Gaming Headphones Stereo 7.1 Surround Sound PS4 Headset 50mm Drivers, 3.5mm Audio Jack Over Ear Headphones Wired for PC Switch Playstation Xbox PS5 Laptop ",20,"$8,574 ",Earphones
+37,"Powerbeats Pro Wireless Earbuds - Apple H1 Headphone Chip, Class 1 Bluetooth Headphones, 9 Hours of Listening Time, Sweat Resistant, Built-in Microphone - Black ",10,"$7,829 ",Earphones
+38,Apple AirPods Pro ,20,"$4,502 ",Earphones
+39,"GRV Smart Watch for iOS and Android Phones, Watches for Men Women IP68 Waterproof Smartwatch Fitness Tracker Watch with Heart Rate/Sleep Monitor Steps Calories Counter (Pink) ",29,"$15,597 ",Watch
+40,"Apple Watch Series˜7 [GPS 41mm] Smart Watch w/Blue Aluminum Case with Abyss Blue Sport Band. Fitness Tracker, Blood Oxygen & ECG Apps, Always-On Retina Display, Water Resistant ",19,"$13,061 ",Watch
+41,"Samsung Electronics Galaxy Watch 4 44mm Smartwatch with ECG Monitor Tracker for Health Fitness Running Sleep Cycles GPS Fall Detection Bluetooth US Version, Black ",30,"$11,066 ",Watch
+42,"Samsung Electronics Galaxy Watch 4 Classic 46mm Smartwatch with ECG Monitor Tracker for Health Fitness Running Sleep Cycles GPS Fall Detection Bluetooth US Version, Black (Renewed) ",25,"$8,504 ",Watch
+43,"Donerton Smart Watch, Fitness Tracker for Android Phones, Fitness Tracker with Heart Rate and Sleep Monitor, Activity Tracker with IP67 Waterproof Pedometer Smartwatch with Step Counter for Women Men ",21,"$10,797 ",Watch
+44,"Choiknbo Smart Watch, Fitness Tracker SmartWatch for Android/ iOS Phones, 1.69"" Full Touch Screen with Heart Rate Monitor, Step Counter, IP68 Waterproof Smart Watches for Man/ Women ",14,"$3,595 ",Watch
+45,"(Renewed) Apple Watch Series 3 (GPS + Celluar, 42MM) - Space Gray Aluminum Case with Black Sport Band ",30,"$5,459 ",Watch
+46,"Smart Watch for Women, AGPTEK Smartwatch for Android and iOS Phones IP68 Waterproof Activity Tracker with Full Touch Color Screen Heart Rate Monitor Pedometer Sleep Monitor, Pink, LW11 ",16,"$9,010 ",Watch
+47,"Amazfit T-Rex Pro Smart Watch with GPS, Outdoor Fitness Watch for Men, Military Standard Certified, 100+ Sports Modes, 10 ATM Waterproof, 18 Day Battery Life, Blood Oxygen Heart Rate Monitor, Gray ",11,"$10,894 ",Watch
+48,"Smart Watch (Answer/Make Call), IP67 Waterproof Fitness Watch with Blood Pressure Heart Rate SpO2 Sleep Tracker Voice Control, Sports Smart Watches for Women Men for Android iOS Phones (Black) ",28,"$8,007 ",Watch
+49,Apple Pencil (2nd Generation) ,25,"$15,842 ",ACCESSORIES
+50,"iPhone Charger, TAKAGI Lightning Cable 3PACK 6FT Nylon Braided USB Charging Cable High Speed Data Sync Transfer Cord Compatible with iPhone 13/12/11 Pro Max/XS MAX/XR/XS/X/8/7/Plus/6S/6/SE/5S/iPad ",19,"$15,897 ",ACCESSORIES
+51,Apple Lightning to 3.5 mm Headphone Jack Adapter ,11,"$6,994 ",ACCESSORIES
+52,"Ailun 2 Pack Screen Protector Compatible for iPhone 13 Pro Max [6.7 inch] Display 2021 with 2 Pack Tempered Glass Camera Lens Protector,[9H Hardness]-HD ",28,"$6,029 ",ACCESSORIES
+53,"Full Motion TV Monitor Wall Mount Bracket Articulating Arms Swivels Tilts Extension Rotation for Most 13-42 Inch LED LCD Flat Curved Screen TVs & Monitors, Max VESA 200x200mm up to 44lbs by Pipishell ",29,"$14,046 ",ACCESSORIES
+54,"SAMSUNG EVO Select Micro SD-Memory-Card + Adapter, 256GB microSDXC 130MB/s Full HD & 4K UHD, UHS-I, U3, A2, V30, Expanded Storage for Android Smartphones, Tablets, Nintendo-Switch (MB-ME256KA/AM) ",14,"$15,489 ",ACCESSORIES
+55,"SanDisk 128GB Extreme PRO SDXC UHS-I Card - C10, U3, V30, 4K UHD, SD Card - SDSDXXY-128G-GN4IN ",24,"$14,086 ",ACCESSORIES
+56,"iPhone Charger,ZUQIETA 3Pack (Apple MFi Certified) Lightning Cable Data Sync Charging Cords with 3Pack USB Wall Charger Travel Plug Adapter Compatible iPhone 12 Pro/11 Pro/Xs/XR/X/8/8Plus and More ",26,"$19,761 ",ACCESSORIES
+57,"CASEKOO Crystal Clear Designed for iPhone 13 Pro Case, [Not Yellowing] [Military Drop Protection] Shockproof Protective Phone Case 6.1 inch 2021 (Clear) ",25,"$8,197 ",ACCESSORIES
+58,"Portable 40 Inch Aluminum Alloy Selfie Stick Phone Tripod with Wireless Remote Shutter Compatible with iPhone 13 12 11 pro Xs Max Xr X 8 7 6 Plus, Android Samsung Smartphone ",29,"$16,219 ",ACCESSORIES
+59,"[2 Pack] Privacy Screen Protector for iPhone 11/XR, YMHML Tempered Glass Anti-Spy Bubble Free Case Friendly Easy Installation Film for iPhone 11/XR 6.1 Inch ",17,"$9,594 ",ACCESSORIES
+60,"HyperX QuadCast S ? RGB USB Condenser Microphone for PC, PS4, PS5 and Mac, Anti-Vibration Shock Mount, 4 Polar Patterns, Pop Filter, Gain Control, Gaming, Streaming, Podcasts, Twitch, YouTube, Discord ",22,"$9,838 ",ACCESSORIES
+61,Oontz Bluetooth Speaker | Portable Bluetooth Speakers | Small But Powerful | 100 Foot Wireless Bluetooth Range | 14 Hours Battery Life | Water Resistant (IPX5) ,28,"$17,491 ",microphone
+62,Nulaxy Wireless in-Car Bluetooth FM Transmitter Radio Adapter Car Kit W 1.44 Inch Display Supports TF/SD Card and USB Car Charger for All Smartphones Audio Players-KM18 ,28,"$3,227 ",ACCESSORIES
+63,"Meeting Owl Pro - 360-Degree, 1080p HD Smart Video Conference Camera, Microphone, and Speaker (Automatic Speaker Focus & Smart Zooming and Noise Equalizing) ",22,"$15,319 ",ACCESSORIES
+64,"Samsung Electronics Galaxy A03s Cell Phone, Factory Unlocked Android Smartphone, 32GB, Long Lasting Battery, Expandable Storage, 3 Camera Lenses, Infinite Display, US Version, Black ",26,"$65,141 ",Phones
+65,Moto G Power | 2021 | 3-Day battery | Unlocked | Made for US by Motorola | 4/64GB | 48MP Camera | Gray ,16,"$75,319 ",Phones
+66,"Samsung Galaxy S21 FE 5G Cell Phone, Factory Unlocked Android Smartphone, 128GB, 120Hz Display, Pro Grade Camera, All Day Intelligent Battery, US Version, Graphite ",18,"$93,944 ",Phones
+67,"Samsung Galaxy A12 (32GB, 3GB) 6.5"" HD+, Quad Camera, 5000mAh Battery, Global 4G Volte Unlocked (T-Mobile, Verizon, Metro) A125U (Black) (Renewed) ",29,"$33,831 ",Phones
+68,Moto G Power | 2021 | 3-Day battery | Unlocked | Made for US by Motorola | 3/32GB | 48MP Camera | Silver ,26,"$60,163 ",Phones
+69,(Renewed) Samsung Galaxy A10e 32GB A102U GSM Unlocked Phone - Black ,19,"$129,487 ",Phones
+70,"SAMSUNG Electronics Galaxy Z Flip 3 5G Factory Unlocked Android Cell Phone US Version Smartphone Flex Mode Intuitive Camera Compact 256GB Storage US Warranty, Phantom Black ",29,"$142,542 ",Phones
+71,"(Renewed) Apple iPhone 8, 64GB, Gold - Unlocked ",24,"$132,576 ",Phones
+72,"Apple iPhone 11 Pro, US Version, 256GB, Gold - Unlocked (Renewed) ",21,"$56,237 ",Phones
+73,"(Renewed) Apple iPhone XR, US Version, 128GB, Black - Unlocked ",28,"$131,665 ",Phones
+74,"Samsung Galaxy Tab S6 Lite 10.4"", 64GB Wi-Fi Tablet Oxford Gray - SM-P610NZAAXAR - S Pen Included with Samsung Tab S6 Lite Book Cover - Oxford Gray - EF-BP610PJEGUJ (Renewed) ",18,"$130,454 ",Phones
+75,Samsung 10.4-Inch Galaxy Tab S6 Lite (Oxford Gray) with Cover and S-Pen (Renewed) ,11,"$130,578 ",Phones
+76,"Evocel iPhone 11 Pro Case Magnext Series with Magnetic Back Plate for Apple iPhone 11 Pro 5.8 inch, Blue ",18,"$34,161 ",Phones
+77,"Apple iPhone 11, 64GB, White - Fully Unlocked (Renewed) ",20,"$92,129 ",Phones
+78,"Apple iPhone 12 Mini, 64GB, White - Fully Unlocked (Renewed) ",24,"$52,805 ",Phones
+79,"Apple iPhone SE 2nd Generation, US Version, 64GB, Black - Unlocked (Renewed) ",24,"$30,596 ",Phones
+80,"TCL 20 Pro 5G Unlocked Android Smartphone with 6.67? AMOLED FHD+ Display, 48MP OIS Quad Rear Camera System, 6GB+256GB, 4500mAh Battery with Wireless Charging, US 5G Version Cellphone, Moondust Gray ",27,"$36,022 ",Phones
+81,Apple Silicone Case (for iPhone Xs Max) - Blue Horizon ,17,"$75,769 ",Phones
+82,"Apple iPhone 12 Pro Max, 256GB, Pacific Blue - Unlocked (Renewed Premium) ",21,"$53,577 ",Phones
+83,"Apple iPhone 11 Pro, 256GB, Space Gray - Fully Unlocked (Renewed Premium) ",30,"$132,994 ",Phones
+84,"Apple iPhone 11, 64GB, White - Fully Unlocked (Renewed) ",24,"$49,629 ",Phones
+85,"Apple iPhone 13, 128GB, Pink - Unlocked (Renewed) ",18,"$124,443 ",Phones
+86,"Apple iPhone 7, 32GB, Black - Unlocked (Renewed) ",22,"$118,533 ",Phones
+87,"Apple iPhone XS Max, 64GB, Gold - Unlocked (Renewed Premium) ",10,"$35,391 ",Phones
+88,"Apple iPhone 12, 64GB, Green - Unlocked (Renewed Premium) ",28,"$126,403 ",Phones
+89,"Apple iPhone Xs, 256GB, Space Gray - GSM Unlocked (Renewed Premium) ",16,"$45,601 ",Phones
+90,"Apple iPhone 8 Plus, 256GB, Space Gray - GSM Carriers (Renewed Premium) ",10,"$128,027 ",Phones
+91,"TCL 20 Pro 5G Unlocked Android Smartphone with 6.67? AMOLED FHD+ Display, 48MP OIS Quad Rear Camera System, 6GB+256GB, 4500mAh Battery with Wireless Charging, US 5G Version Cellphone, Marine Blue ",30,"$59,458 ",ACCESSORIES
+92,"Portable Projector with Wifi and Bluetooth for Phone - Salange 8000 LUX Mini Home Projector HD 1080P Supported for Outdoor Movies, Sync Smartphone Screen, Compatible w iPhone, TV Stick,PS5,HDMI,Laptop ",25,"$92,842 ",ACCESSORIES
+93,Apple TV MD199LL/A [NEWEST VERSION] ,18,"$108,464 ",ACCESSORIES
+94,Apple TV Remote ,26,"$87,420 ",ACCESSORIES
+95,"KTRIO Cell Phone Stand, Acrylic Phone Holder for Desk, Clear Phone Stand, Dock, Cradle Compatible with iPhone 13 Pro Max 11 12 XR 7 8 Plus, Samsung Galaxy, Google Pixel, Home Office Desk Accessories ",24,"$85,199 ",ACCESSORIES
+96,"USB C Flash Drive 1TB USB3.0 Thumb Drive Phone Photo Stick 1TB Flash Drive Dual External StorageRichwell for Pad pro Android USB C Devices,Computers and MacBook Pro Air USB Type C Black-1TB AZ ",22,"$107,795 ",ACCESSORIES
+97,"INNOCN 24 Inch Computer Monitor 2K QHD 2560x1440P, 75Hz, 100% sRGB, IPS Panel, HDMI, DP, 3.5mm, 16:9 Display Flicker Free Gaming 1440P Monitor for Home Office, VESA Mountable - 24D1Q, Black ",28,"$97,360 ",ACCESSORIES
+98,"Soundance Laptop Stand, Aluminum Computer Riser, Ergonomic Laptops Elevator for Desk, Metal Holder Compatible with 10 to 15.6 Inches Notebook Computer, Champagne Gold with Light Pink Color ",23,"$135,225 ",ACCESSORIES
+99,"Ytonet Laptop Case, 15.6 inch TSA Laptop Sleeve Water Resistant Durable Computer Carrying Case for 15.6 inch HP, Dell, Lenovo, Asus Notebook, Gifts for Men Women, Grey ",10,"$65,482 ",ACCESSORIES

@@ -1,37 +1,35 @@
-<div class="container">
-    <div class="row">
-      <div class="col">
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
-            </div>
-          </div>
-      </div>
-      <div class="col">
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
-            </div>
-          </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        1 of 3
-      </div>
-      <div class="col">
-        2 of 3
-      </div>
-      <div class="col">
-        3 of 3
-      </div>
-    </div>
+{% extends 'base.html' %} {% block content %}
+
+<h1 class="container">Stores</h1>
+<div class="row container" style="padding-bottom: 20px;">
+    <div class="col"><div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h2 class="card-title">Old Harbour Books & Stationery</h2>
+          <p class="card-text">We sell textbooks, notebooks, novels, stationery items (for eg. pens, crayons, stickers, markers, cartridge paper) and have an internet cafe.</p>
+          <a href="old_harbour" class="card-link"><button class="btn btn-primary">Store products</button> </a>
+        </div>
+      </div></div>
+    <div class="col"><div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h2 class="card-title">Acrostra</h2>
+          <p class="card-text">For your needs phone, laptop and watches we got it</p>
+          <a href="acrostra" class="card-link"><button class="btn btn-primary">Store products</button> </a>
+        </div>
+      </div></div>
+    <div class="col"><div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h2 class="card-title">Passthru</h2>
+          <p class="card-text">Come Passthru and also enjoy the view. </p>
+          <a href="passthru" class="card-link"><button class="btn btn-primary">Store products</button> </a>
+        </div>
+      </div></div>
+    <div class="col"><div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h2 class="card-title">Lupin Bookstore</h2>
+          <p class="card-text">Come and get your books the more you read the more knowledge you receive.</p>
+          <a href="lupin" class="card-link"><button class="btn btn-primary">Store products</button> </a>
+        </div>
+      </div></div>
   </div>
+
+  {% endblock %}
