@@ -120,8 +120,50 @@ def upload():
     cursor.close()
     return redirect(url_for("index"))
 
-@app.route('/list')
+@app.route('/update', methods=["GET","POST"])
+def update():
+    if request.method == 'POST':
+        itemnumber = request.form['itemnumber']
+        itemname = request.form['itemname']
+        quantity = request.form['quantity']
+        price = request.form['price']
+        department = request.form['department']
+        image = request.form['image']
+ 
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute('UPDATE stores SET Item_Description=%s, Qty=%s, Price=%s, Department=%s, image=%s WHERE id=%s',(itemnumber, itemname, quantity,price,department,image))
+    mysql.connection.commit()
+
+    # flash('%s deleted'(table), 'success')
+    return redirect(url_for('list'))
+
+@app.route('/delete/<string:id>')
+def delete_user(id):
+  
+ 
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute("DELETE FROM stores WHERE Item_Number=%s", (id,))
+    mysql.connection.commit()
+
+    # flash('%s deleted'(table), 'success')
+    return redirect(url_for('list'))
+
+@app.route('/list',methods=(['GET','POST']))
 def list():
+     # Create variables for easy access
+    if request.method == 'POST':
+        itemnumber = request.form['itemnumber']
+        itemname = request.form['itemname']
+        quantity = request.form['quantity']
+        price = request.form['price']
+        department = request.form['department']
+        image = request.form['image']
+
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+
+        cursor.execute('INSERT INTO stores VALUES (%s, %s, %s, %s, %s, %s)', (itemnumber, itemname, quantity,price,department,image))
+        mysql.connection.commit()
+    
     search = False
     q = request.args.get('q')
     if q:
@@ -131,12 +173,12 @@ def list():
     limit = 20
     offset = page*limit - limit
     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-     
-    cursor.execute("SELECT * FROM  `inventory_fil_i_tech` ORDER By Item_Number ASC LIMIT %s OFFSET %s", (limit, offset))
+    cursor.execute("SELECT * FROM  `stores` ORDER By SKU ASC LIMIT %s OFFSET %s", (limit, offset))
     data=cursor.fetchall()
-    total = cursor.execute("SELECT * FROM `inventory_fil_i_tech` WHERE 1;")
-    cursor.close()
+    total = cursor.execute("SELECT * FROM `stores` WHERE 1;")
+
     
+    cursor.close()
     pagination = Pagination(page=page,per_page=limit, total=total, record_name='data')
     return render_template("product_list.html", data=data, pagination=pagination)
 
@@ -323,7 +365,7 @@ def products():
             cur.execute(query)
             data = cur.fetchall()
         else:    
-            query = " SELECT * FROM stores WHERE Item_Description LIKE '%{}%' OR Price LIKE '%{}%' OR Qty LIKE '%{}%' ORDER BY Item_Description DESC LIMIT 20".format(search_word,search_word,search_word)
+            query = " SELECT * FROM stores WHERE Item_Description LIKE '%{}%' OR Price LIKE '%{}%' OR Qty LIKE '%{}%' OR Category LIKE '%{}%' OR Item_Type LIKE '%{}%' ORDER BY Item_Description DESC LIMIT 20".format(search_word,search_word,search_word,search_word,search_word)
             cur.execute(query)
             numrows = int(cur.rowcount)
             data = cur.fetchall()
