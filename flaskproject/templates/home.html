@@ -1,7 +1,31 @@
 {% extends 'base.html' %} {% block content %}
 
 <title>{% block title %}Home{% endblock %}</title>
+<script>
+  $(function() {
+    $(".icon").click(function(){
+      var search_word = $("#search-box").val();
+      var data = 'search_word=' + search_word;
+      if(search-word==''){
+      }else{
+        $.ajax({
+          type: "POST",
+          url: "/se",
+          data: data,
+          cache: false,
+          beforeSend: function(html){
+            document.getElementById("").innerHTML = '';
 
+          },
+          success: function(html){
+            $("#").show()
+          }
+        })
+      }
+      return false;
+    })
+  })
+  </script>
 <style>
   body {
     background-image: url("https://images.unsplash.com/photo-1619252584172-a83a949b6efd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80");
@@ -9,26 +33,88 @@
   }
 
   header {
-    background-color: #f74d72bb;
     padding: 30px;
     border-radius: 10px;
+    height: auto;
+   
   }
+
+  header h1{
+    font-size: 90px;
+    
+  }
+
+ 
+  .box{
+
+width: 500px;
+
+height: 50px;
+
+background-color:white;
+
+border-radius: 30px;
+
+display: flex;
+
+align-items: center;
+
+padding: 20px;
+
+}
+
+.box > i {
+
+font-size: 20px;
+
+color: #777;
+
+}
+
+.box > input{
+
+flex: 1;
+
+height: 40px;
+
+border: none;
+
+outline: none;
+
+font-size: 18px;
+
+padding-left: 10px;
+
+
+}
+
+   
+ 
 </style>
 
+
 <header>
-  <p class="text-center text-white fs-1">What will you search for today?</p>
+  <div class="container my-auto">
+    <div class="row">
+      <div class="col">
+        <h1 class="text-center  ">What will you search for today?</h1>
   <form class="d-flex container" method="post">
-    <input
-      class="form-control me-2"
-      type="search"
-      placeholder="Search for Products"
-      aria-label="Search"
-      name="products"
-    />
-    <button class="btn btn-primary" type="submit">
-      <i class="fa-solid fa-magnifying-glass"></i>
-    </button>
+    <div class="box">
+
+   <i class="icon fa fa-search" aria-hidden="true" value="search"></i>
+    
+      <input type="text" id="search-box" name="search" value="search">
+      
+    </div>
   </form>
+      </div>
+      <div class="col">
+        <img src="static\images\ivana-cajina-dnL6ZIpht2s-unsplash-removebg-preview (1).png" alt="smiling">
+      </div>
+    </div>
+   
+  </div>
+  
 </header>
 
 <section class="container">
@@ -153,9 +239,10 @@
         <div class="books text-white">
           <div class="container">
             <p class="fs-1">Books</p>
-            <button type="button" class="btn btn-outline-light">
-              click here
-            </button>
+            <form action="books" method="post">
+              <input class="btn btn-outline-light" name="books" type="submit" value="books" />
+          </form>
+            
           </div>
         </div>
       </div>
@@ -197,176 +284,6 @@
   </div>
 </section>
 
-<section class="featured">
-  <div class="row">
-    <div class="col-12">
-      <div class="container">
-        <div class="text-center mx-auto">
-          <h2>Featured Products</h2>
-        </div>
 
-        <div class="container mt-5 mb-5">
-          <div class="row g-2">
-            <div class="col-md-4 d-flex justify-content-center">
-              <div class="card p-2">
-                <div class="text-center">
-                  <img
-                    src="static/images/pics/watch.jpg"
-                    class="img-fluid"
-                    width="200"
-                  />
-                </div>
-                <div class="content">
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <span class="category">Watch</span>
-                    <span class="price">$599</span>
-                  </div>
-                  <p>Dell Astro 3044</p>
-                  <div class="buttons d-flex justify-content-center">
-                    <button class="btn btn-outline-primary mr-1">
-                      Details
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 d-flex justify-content-center">
-              <div class="card p-2">
-                <div class="text-center">
-                  <img
-                    src="static/images/pics/speakers.jpg"
-                    class="img-fluid"
-                    width="200"
-                  />
-                </div>
-                <div class="content">
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <span class="category">Laptop</span>
-                    <span class="price">$799</span>
-                  </div>
-                  <p>Dell Astro 3434</p>
-                  <div class="buttons d-flex justify-content-center">
-                    <button class="btn btn-outline-primary mr-1">
-                      Details
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 d-flex justify-content-center">
-              <div class="card p-2">
-                <div class="text-center">
-                  <img
-                    src="https://i.imgur.com/6c6dloN.png"
-                    class="img-fluid"
-                    width="200"
-                  />
-                </div>
-                <div class="content">
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <span class="category">Laptop</span>
-                    <span class="price">$999</span>
-                  </div>
-                  <p>Dell Latitude 3340</p>
-                  <div class="buttons d-flex justify-content-center">
-                    <button class="btn btn-outline-primary mr-1">
-                      Details
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="container mt-5 mb-5">
-          <div class="row g-2">
-            <div class="col-md-4 d-flex justify-content-center">
-              <div class="card p-2">
-                <div class="text-center">
-                  <img
-                    src="https://i.imgur.com/Sp5bXsO.png"
-                    class="img-fluid"
-                    width="200"
-                  />
-                </div>
-                <div class="content">
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <span class="category">Laptop</span>
-                    <span class="price">$599</span>
-                  </div>
-                  <p>Dell Astro 3044</p>
-                  <div class="buttons d-flex justify-content-center">
-                    <button class="btn btn-outline-primary mr-1">
-                      Details
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 d-flex justify-content-center">
-              <div class="card p-2">
-                <div class="text-center">
-                  <img
-                    src="https://i.imgur.com/LaGzgLp.png"
-                    class="img-fluid"
-                    width="200"
-                  />
-                </div>
-                <div class="content">
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <span class="category">Laptop</span>
-                    <span class="price">$799</span>
-                  </div>
-                  <p>Dell Astro 3434</p>
-                  <div class="buttons d-flex justify-content-center">
-                    <button class="btn btn-outline-primary mr-1">
-                      Details
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 d-flex justify-content-center">
-              <div class="card p-2">
-                <div class="text-center">
-                  <img
-                    src="https://i.imgur.com/6c6dloN.png"
-                    class="img-fluid"
-                    width="200"
-                  />
-                </div>
-                <div class="content">
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <span class="category">Laptop</span>
-                    <span class="price">$999</span>
-                  </div>
-                  <p>Dell Latitude 3340</p>
-                  <div class="buttons d-flex justify-content-center">
-                    <button class="btn btn-outline-primary mr-1">
-                      Details
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 {% endblock %}

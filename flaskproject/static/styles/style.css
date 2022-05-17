@@ -251,3 +251,23 @@ aside .sidebar li a:hover span{
         font-size: 2rem;
     }
 }
+
+#googleMap, #map{
+    width: 80%;
+    height: 400px;
+    margin: 20px auto;
+}
+
+#output{
+    text-align: center;
+    font-size: 2em;
+    margin: 20px auto;
+}
+
+.form-group a{
+    color: #000;
+}
+
+.buttons div{
+    margin-right: 10px;
+}

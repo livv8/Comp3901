@@ -1,27 +1,29 @@
 {% extends 'base.html' %}
 {% block content %}
+
+{% for item in data %}
 <div class="container">
   <div class="row">
     <div class="col">
       <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=830&q=80" alt="tshirt">
     </div>
     <div class="col details">
-      <h1>Black Tee</h1>
-    <button type="button" class="btn btn-success btn-lg">Available in stock</button>
-    <h2 class="price d-inline">$2300</h2>
-    <h3>Description</h3>
-    <p>Classic Boxy Heavyweight 705 Circle Logo Tee
+      <h1>{{item.Number}}</h1>
+    <button type="button" class="btn btn-success btn-lg">{{item.Qty}}</button>
+    <h2 class="price d-inline">{{item.Price}}</h2>
+    <h3>{{item.Department}}</h3>
+    <!-- <p>Classic Boxy Heavyweight 705 Circle Logo Tee
     705 Circle Logo Print on Front & Back
 
-      Pigment Dyed, Garment Washed</p>
+      Pigment Dyed, Garment Washed</p> -->
     
-    <div class="size" >
+    <!-- <div class="size" >
       <h6>Size</h6>
       <button class="btn">S</button>
       <button class="btn">M</button>
       <button class="btn">L</button>
       <button class="btn">XL</button>
-    </div>
+    </div> -->
     <div class="compare">
       <button type="button" class="btn  btn-lg"><img alt="location" src="static/images/compare.svg" > Go to store </button>
       
@@ -30,4 +32,5 @@
   </div>
   
 </div>
+{% endfor %}
   {% endblock %}

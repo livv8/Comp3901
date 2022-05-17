@@ -1,37 +1,26 @@
 {% extends 'base.html' %}
 {% block content %}
-<section class="categories">
-    <p class="text-center fs-1">Browse by Categories</p>
-    <div class="container">
-        <div class="row" >
-            <div class="col stationary text-white">
-             <div class="container">
-                  
-                 <p class="fs-1">Stationary</p>
-                 <button type="button" class="btn btn-outline-light">click here</button>
-             </div>
-            </div>
-            <div class="col bags text-white">
-              <p class="fs-1">Bags</p> 
-              <button type="button" class="btn btn-outline-light">click here</button>
-            </div>
-            <div class="col books text-white">
-            
-             <p class="fs-1"> Books</p>
-             <button type="button" class="btn btn-outline-light">click here</button>
-            </div>
-          </div>
-        <div class="row">
-          <div class="col mens text-white">
-              <p class="fs-1">  Mens</p>
-              <button type="button" class="btn btn-outline-light">click here</button>
-          </div>
-          <div class="col womens text-white">
-          <p class="fs-1">Womens</p> 
-          <button type="button" class="btn btn-outline-light">click here</button>
-          </div>
-        </div>
-        
-      </div>
+<table class="table" >
+  {% for item in data %}
+ 
+  <tbody>
+    <tr>
+      <td ><img src="static\images\pics\No_Image_Available.jpg" alt="" width="30%"></td>
+      <td style="  height: 80px;
+      text-align: center;
+      vertical-align: middle;"><h2>{{item.Item_Description}}</h2>
+      <h4>{{item.Price}}</h4>
+    </td>
+    <td>
+      <!-- <a href="details" type="btn" class="btn btn-danger">
+        Details
+      </a> -->
+    </td>
+    </tr>
+    
+  </tbody>
+  {% endfor %}
+</table>
+{{ pagination.links }}
 </section>
 {% endblock %}
