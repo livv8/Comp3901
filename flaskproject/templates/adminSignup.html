@@ -8,8 +8,27 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 <link rel="stylesheet" href="{{ url_for('static', filename='styles/login.css')}}">
     <title>Document</title>
+    <link rel="shortcut icon" href="static\images\favicon.ico">
+
 </head>
 <body>
+  <style>
+    .success{
+      background: green;
+      
+    }
+
+    .error{
+      
+      background: red;
+    }
+  </style>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+  {% for category, message in messages %}
+    <div class="{{ category }}">{{ message }}</div>
+  {% endfor %}
+{% endwith %}
   <section class="vh-100 gradient-custom" >
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">

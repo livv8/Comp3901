@@ -74,7 +74,7 @@
       transition: all 0.3s;
     }
 
-    .navbar {
+    .navbar #sidebar {
       padding: 15px 10px;
       background: #fff;
       border: none;
@@ -97,7 +97,7 @@
     }
 
     /* ---------------------------------------------------
-        SIDEBAR STYLE
+        Sidebar
     ----------------------------------------------------- */
 
     .wrapper {
@@ -256,7 +256,7 @@
     }
     
   </style>
-  <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #272DBE;">
+   <nav class="navbar navbar-expand-lg navbar-dark ">
     <div class="container-fluid">
       <a class="navbar-brand" href="#"><img src="static/images/locatix-logo.png" alt="" ></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -267,14 +267,12 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="home">Home</a>
           </li>
+          
           <li class="nav-item">
-            <a class="nav-link" href="#">BestSellers</a>
+            <a class="nav-link active" href="{{ url_for('search') }}">Products</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('products') }}">Products</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="stores">Stores</a>
+            <a class="nav-link active" href="stores">Stores</a>
           </li>
        </ul>
        <form class="d-flex">
@@ -283,6 +281,7 @@
       </div>
     </div>
   </nav>  
+
 
   
   <div class="wrapper">
@@ -296,10 +295,7 @@
 
       <ul class="list-unstyled components">
         <p>Narrow search by</p>
-        <li class="active">
-          <h4>Store</h4>
-
-        </li>
+     
         <li>
           <a href="#">Price-low</a>
         </li>
@@ -308,6 +304,12 @@
         </li>
         <li>
           <a href="#">Price-High</a>
+        </li>
+        <div class="sidebar-header">
+          <h5>Categories</h3>
+        </div>
+        <li>
+          <a href="#">Statioanry </a>
         </li>
         <li>
           <a href="stores">Stores</a>

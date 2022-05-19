@@ -1,0 +1,96 @@
+Item_Number,Item Name,Department ,In Stock,Price
+1,Handwriting bumper book,Kids ,45,1250
+2,#10 old school diary of a wimpy kid ,Kids ,30,990
+3,#11 double down diary of a wimpy kid,Kids ,21,990
+4,#12 the getway diary of a wimpy kid,Kids ,17,990
+5,peppa peg & her golden boots,Kids ,10,1150
+6,peppa peg in a plane,Kids ,14,480
+7,peppa's new friend ,Kids ,29,825
+8,#25 the secret panel ,Kids ,20,580
+9,#53 clue of the hissing serpent,Kids ,20,580
+10,#56 the secret of the pirates' hill,Kids ,20,580
+11,#40 mystery of the desert,Kids ,15,580
+12,#1 dork diaries ,Kids ,20,1950
+13,#2 dork diaries ,Kids ,20,1950
+14,#3 dork diaries ,Kids ,20,1950
+15,#6 dork diaries ,Kids ,20,1950
+16,the princess and the pea,Kids ,17,200
+17,three billy goats ,Kids ,13,200
+18,snow white story time,Kids ,19,200
+19,the brothers grimm,Kids ,26,600
+20,five little ducks,Kids ,14,980
+21,big book of nursery ryhmes,Kids ,39,900
+22,the wizard of oz,Kids ,10,590
+23,puss in boots fairytale,Kids ,19,560
+24,first book of prayers and grace ,Kids ,25,660
+25,first book of bible stories ,Kids ,25,660
+26,helix oxford geometry set,Stationary ,40,400
+27,oxford helix geometry set,Stationary ,15,300
+28,mead 5 sub notebook,Stationary ,50,1490
+29,mead 1 sub notebook,Stationary ,50,560
+30,paper folder,Stationary ,200,25
+31,spiral notebook ,Stationary ,50,140
+32,wide rule notebook ,Stationary ,50,290
+33,five star spiral notebook,Stationary ,50,640
+34,seek 70 sheet exercise,Stationary ,50,128
+35,seek 40 sheet exercise,Stationary ,50,86
+36,sharpie fine ,Stationary ,400,140
+37,sharpie king size ,Stationary ,400,200
+38,3b graphic drawing pencil,Stationary ,400,63
+39,5b graphic drawing pencil,Stationary ,400,35
+40,stabilo neon pencil,Stationary ,400,50
+41,papermate med blue,Stationary ,400,30
+42,stabilo pen ,Stationary ,400,40
+43,sudmark #2 pencil,Stationary ,400,20
+44,pentel fine pen,Stationary ,400,120
+45,pentel med pen,Stationary ,400,120
+46,pritt glue stick,Stationary ,47,130
+47,Elmers 1.25 oz  school glue,Stationary ,34,130
+48,pattex 50ml tube,Stationary ,26,450
+49,"1 1/2"" binder ",Stationary ,40,850
+50,"1"" binder ",Stationary ,40,400
+51,binder refills 50 sheet,Stationary ,300,150
+52,binder refills 100 sheet,Stationary ,300,300
+53,plain paper 100 sheet,Stationary ,300,240
+54,plain paper 500 sheet,Stationary ,300,750
+55,plain paper 1000 sheet,Stationary ,300,1050
+56,stabilo eraser,Stationary ,150,50
+57,helix oxford large eraser,Stationary ,150,70
+58,trident small eraser,Stationary ,150,45
+59,the student companion,Textbook,45,2450
+60,leaps and bound in literacy ,Textbook,100,2350
+61,primary maths companion ,Textbook,100,155
+62,new caibbean junior reader bk3,Textbook,100,3115
+63,the pep math workbook,Textbook,100,1850
+64,hola spanish bk1,Textbook,100,1090
+65,easy steps in vocabulary bk2,Textbook,100,1700
+66,easy steps in vocabulary bk3,Textbook,100,1840
+67,chemistry lab book,Textbook,100,840
+68,physicis lab book,Textbook,100,840
+69,biology lab book,Textbook,100,1500
+70,food and nutrition CSEC  home eco,Textbook,100,3400
+71,CSEC integrated science ,Textbook,100,3860
+72,CSEC biology collins concise,Textbook,100,2970
+73,CSEC physics collins concise ,Textbook,100,2970
+74,Resource and technology bk1,Textbook,100,5000
+75,information technology for CSEC,Textbook,100,4600
+76,CSEC biology study guide,Textbook,100,3300
+77,Physics for CSEC 2nd edition,Textbook,100,6550
+78,carlong principles of accounts for CSEC,Textbook,100,3850
+79,carlong principles of business for CSEC,Textbook,100,4350
+80,economics for CSEC macmillan,Textbook,100,4060
+81,A world of prose  new ed,Textbook,100,3700
+82,EDPM for CSEC examinations,Textbook,100,4400
+83,religious education bk1,Textbook,100,4100
+84,religious education bk2,Textbook,100,4150
+85,carlong english b CSEC,Textbook,100,3080
+86,viva practice book bk4,Textbook,100,2240
+87,home econmoics in action bk1,Textbook,100,4390
+88,mathemaics workbook for CSEC,Textbook,100,1600
+89,CXC a comprehensive english  ,Textbook,100,4800
+90,living together social studies,Textbook,100,4100
+91,chevere activity book bk1,Textbook,100,1700
+92,microsoft word 2007-2010 ,Textbook,100,1300
+93,CSEC english A study guide,Textbook,100,4700
+94,CSEC biology MCQ practice ,Textbook,100,1700
+95,CSEC math MCQ practice ,Textbook,100,1800

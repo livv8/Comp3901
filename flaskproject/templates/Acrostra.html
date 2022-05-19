@@ -1,20 +1,27 @@
+<!--Acrostra store  -->
 {% extends 'base.html' %}
-{% block title %} Products {% endblock %}
-  
+{% block title %} Acrostra {% endblock %}
+
     height: 80px;
     text-align: center;
     vertical-align: middle;
   
 </style>
 {% block content %}
+<script> let address = document.getElementById('address');
+       
+</script>
+<a href="/geolocation" class="btn btn-success">Directions</a>
+
 <div class="container">
   <div class="jumbotron">
     <h1 class="display-4">Acrostra</h1>
-    <p class="lead">Address: 6 Glendevon Court, Montego Bay, St. James</p>
+    <p class="lead" id="address">Address: 11 Oxford Road, Kingston, Jamaica</p>
     <hr class="my-4">
     <p>Contact:  </p>
   </div>
   <h2>Store Products</h2>
+  {{ pagination.info}}
 
   <table class="table" >
     {% for item in data %}

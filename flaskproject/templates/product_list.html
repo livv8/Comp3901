@@ -3,7 +3,7 @@
 
 <div class="col py-3">
   <h1>Product Table</h1>
-
+  {{ pagination.info }}
   <table id='data' class="table align-middle mb-0 bg-white">
     <thead class="bg-light table-dark">
       <tr>
@@ -62,7 +62,7 @@
             
              
             <label for="Image" class="form-label">Upload Image</label>
-            <input name="image" class="form-control" type="file" id="formFile" onchange="preview()">
+            <input name="f" class="form-control" type="file" id="formFile" onchange="preview()">
             <button onclick="clearImage()" class="btn btn-primary mt-3">Delete Image</button>
        
         <img id="frame" src="" class="img-fluid" />
@@ -98,70 +98,7 @@
         <td>{{item.Price}}</td>
         
         <td>
-           <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-  Edit
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Update Product Details</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form action="/update" method="POST">
-          <div class="mb-4">
-            <label for="product_name" class="form-label">Item Number</label>
-            <input type="text" placeholder="{{item.Item_Number}}" class="form-control" name="itemnumber" id="itemnumber">
-          </div>
-  
-          <div class="mb-4">
-            <label class="form-label">Item Name</label>
-            <input placeholder="{{item.Item_Description}}" name="itemname" class="form-control" rows="4"></input>
-          </div>
-  
-          <div class="mb-4">
-            
-             
-                  <label for="Image" class="form-label">Upload Image</label>
-                  <input name="image" class="form-control" type="file" id="formFile" onchange="preview()">
-                  <button onclick="clearImage()" class="btn btn-primary mt-3">Delete Image</button>
-             
-              <img id="frame" src="" class="img-fluid" />
-        
-          </div>
-  
           
-  
-          <div class="row gx-2">
-            <div class="col-sm-6 mb-3">
-              <label for="quantity" class="form-label">Quantity</label>
-              <input  type="number" id="quantity" name="quantity" class="form-control">
-            </div>
-            <div class="col-sm-6 mb-3">
-              <label for="department" class="form-label">Department</label>
-              <input name="department" placeholder="{{item.Qty}}" type="text" name="department" class="form-control">
-  
-          <div class="mb-4">
-            <label class="price">Price</label>
-            <input placeholder="{{item.Price}}" type="text" name="price" id="price">
-          </div>
-  
-        
-  
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Update</button>
-      </div>
-    </div>
-  </div>
-</div>
-        </td>
         <td>
           <a href="/delete/{{item.Item_Number}}" class="btn btn-danger btn-xs" href=""
           onclick="return confirm('Are You Sure To Delete ?')">

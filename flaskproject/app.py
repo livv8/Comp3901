@@ -1,8 +1,11 @@
+#Capstone Project 2022
+#Efficiency of website is based on queries used 
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify, flash
 from flask_mysqldb import MySQL
 from authlib.integrations.flask_client import OAuth
 from flask_paginate import Pagination, get_page_parameter
 from passlib.hash import sha256_crypt
+from dotenv import load_dotenv
 import MySQLdb.cursors
 import re
 import os
@@ -10,17 +13,18 @@ from os.path import join, dirname, realpath
 import csv
 import MySQLdb.cursors
 
+load_dotenv()
 
 app = Flask(__name__)
-oauth = OAuth(app)
+oauth = OAuth(app) 
 app.config['DEBUG']= True
 
-app.secret_key = 'your secret key'
+app.secret_key = 'capstone project'
 
 #upload file
 UPLOAD_FOLDER = 'static/files'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-# Enter your database connection details below
+# database connection details 
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = ''
@@ -30,16 +34,16 @@ app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 
 mysql = MySQL(app)
 
+#Admin login 
 @app.route("/adminlogin", methods=['GET','POST'])
 def adminlogin():
     # Check if "username" and "password" POST requests exist (user submitted form)
     if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
-        # Create variables for easy access
         username = request.form['username']
         password = request.form['password']
         # Check if account exists using MySQL
-        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('SELECT * FROM adminaccounts WHERE username = %s AND password = %s', (username, password,))
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor) #mysql connection
+        cursor.execute('SELECT * FROM admin WHERE username = %s AND password = %s', (username, password,))
         # Fetch one record and return result
         account = cursor.fetchone()
         # If account exists in accounts table in out database
@@ -52,28 +56,29 @@ def adminlogin():
             return redirect(url_for('index'))
         else:
             # Account doesnt exist or username/password incorrect
-            flash("Incorrect username/password",category='error')
+            flash("Incorrect username/password",'error')
     # Show the login form with message (if any)
     return render_template("adminlogin.html")
 
+#Admin Signup
 @app.route("/adminsignup",  methods=['GET', 'POST'])
 def adminsignup():
     # Output message if something goes wrong...
     msg = ''
-    # Check if "username", "password" and "email" POST requests exist (user submitted form)
+    # Check if "username", "password" and "email" POST requests exist when user submitted form
     if request.method == 'POST' and 'username' in request.form and 'password' in request.form and 'email' in request.form:
         # Create variables for easy access
         username = request.form['username']
-        password = sha256_crypt.encrypt( request.form['password'])
+        password = sha256_crypt.encrypt( request.form['password']) # hash password using sha256 to goive privacy in database and also lessons load of database since hashed files are smaller
         email = request.form['email']
 
-        # Check if account exists using MySQL        # Check if account exists using MySQL
+        # Check if account exists using MySQL        
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('SELECT * FROM adminaccounts WHERE username = %s', (username,))
+        cursor.execute('SELECT * FROM admin WHERE username = %s', (username,))
         account = cursor.fetchone()
         # If account exists show error and validation checks
         if account:
-            msg = 'Account already exists!'
+            flash("Account already exist", "error")
         elif not re.match(r'[^@]+@[^@]+\.[^@]+', email):
             msg = 'Invalid email address!'
         elif not re.match(r'[A-Za-z0-9]+', username):
@@ -82,23 +87,22 @@ def adminsignup():
             msg = 'Please fill out the form!'
         else:
             # Account doesnt exists and the form data is valid, now insert new account into accounts table
-            cursor.execute('INSERT INTO adminaccounts VALUES (NULL, %s, %s, %s)', (username, password, email,))
+            cursor.execute('INSERT INTO admin VALUES (NULL, %s, %s, %s)', (username, password, email,))
             mysql.connection.commit()
-            flash('You have successfully registered!')
+            flash('You have successfully registered!',"success")
     elif request.method == 'POST':
         # Form is empty... (no POST data)
-        flash( 'Please fill out the form!')
+        flash( 'Please fill out the form!',"error")
     # Show registration form with message (if any)        
     return render_template("adminsignup.html", msg=msg)
 
-@app.route("/admin")
-def admin():
-    return render_template("adminbase.html")
-#Root url
+
+
+#Root url for upload csv
 @app.route("/up")
 def index():
     flash('File uploaded')
-    return render_template('upload.html')
+    return render_template('uploadcsv.html')
 
 #get the upload files
 @app.route('/up', methods =['POST'])
@@ -113,8 +117,9 @@ def upload():
         cursor =mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         csv_data = csv.reader(open(file_path))
     for row in csv_data:
-        cursor.execute("""CREATE TABLE IF NOT EXISTS `inventory_fil_i_tech` ( `Item_Name` varchar(20),`Item_Description` varchar(20), `Department` varchar(10), `Qty` varchar(22),`Price` varchar(22)) DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;;""")
-        cursor.execute("""INSERT INTO `inventory_fil_i_tech` ( Item_Name,Item_Description,Department,Qty, Price) VALUES ( %s, %s, %s, %s)""",row)
+        #queries depends on csv file
+        cursor.execute("""CREATE TABLE IF NOT EXISTS `inventory_fil_i_tech` ( `Item_Number` varchar(20),`Item_Description` varchar(20), `Qty` varchar(10), `Price` varchar(22),`Department` varchar(22)) DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;;""")
+        cursor.execute("""INSERT INTO `inventory_fil_i_tech` ( Item_Number,Item_Description,Qty,Price, Department) VALUES ( %s, %s, %s, %s, %s)""",row)
    
         
     cursor.close()
@@ -131,7 +136,7 @@ def update():
         image = request.form['image']
  
     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-    cursor.execute('UPDATE stores SET Item_Description=%s, Qty=%s, Price=%s, Department=%s, image=%s WHERE id=%s',(itemnumber, itemname, quantity,price,department,image))
+    cursor.execute('UPDATE inventory_fil_i_tech SET   quantity=%s, price=%s, department=%s, image=%s WHERE itemnumber=%s,',( itemname, quantity,price,department,image,itemnumber))
     mysql.connection.commit()
 
     # flash('%s deleted'(table), 'success')
@@ -142,7 +147,7 @@ def delete_user(id):
   
  
     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-    cursor.execute("DELETE FROM stores WHERE Item_Number=%s", (id,))
+    cursor.execute("DELETE FROM inventory_fil_i_tech WHERE Item_Number=%s", (id,))
     mysql.connection.commit()
 
     # flash('%s deleted'(table), 'success')
@@ -150,7 +155,6 @@ def delete_user(id):
 
 @app.route('/list',methods=(['GET','POST']))
 def list():
-     # Create variables for easy access
     if request.method == 'POST':
         itemnumber = request.form['itemnumber']
         itemname = request.form['itemname']
@@ -161,7 +165,7 @@ def list():
 
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
 
-        cursor.execute('INSERT INTO stores VALUES (%s, %s, %s, %s, %s, %s)', (itemnumber, itemname, quantity,price,department,image))
+        cursor.execute('INSERT INTO inventory_fil_i_tech  VALUES (%s, %s, %s, %s, %s, %s)', (itemnumber, itemname, quantity,price,department,image))
         mysql.connection.commit()
     
     search = False
@@ -173,9 +177,9 @@ def list():
     limit = 20
     offset = page*limit - limit
     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-    cursor.execute("SELECT * FROM  `stores` ORDER By SKU ASC LIMIT %s OFFSET %s", (limit, offset))
+    cursor.execute("SELECT * FROM  `inventory_fil_i_tech` ORDER By Item_Number ASC LIMIT %s OFFSET %s", (limit, offset))
     data=cursor.fetchall()
-    total = cursor.execute("SELECT * FROM `stores` WHERE 1;")
+    total = cursor.execute("SELECT * FROM `inventory_fil_i_tech` WHERE 1;")
 
     
     cursor.close()
@@ -213,8 +217,7 @@ def login():
     # Show the login form with message (if any)
     return render_template('login.html', msg=msg)
 
-    # http://localhost:5000/python/logout - this will be the logout page
-@app.route('/pythonlogin/logout')
+@app.route('/login/logout')
 def logout():
     # Remove session data, this will log the user out
    session.pop('loggedin', None)
@@ -264,9 +267,6 @@ def signup():
 def google():
    
     # Google Oauth Config
-    # Get client_id and client_secret from environment variables
-    # For developement purpose you can directly put it
-    # here inside double quotes
     GOOGLE_CLIENT_ID = '843084466858-rrdrv4sq0gd11lhsmqeqdn9n4topcorg.apps.googleusercontent.com'
     GOOGLE_CLIENT_SECRET = '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'
      
@@ -314,8 +314,14 @@ def details():
     cursor.close()
     return render_template("details.html", data=data)
 
+#categorie statioanry
 @app.route("/books",methods=['GET', 'POST'])
 def test():
+    cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    query = "SELECT * from stores WHERE `Department`= 'Books';"
+    cur.execute(query)
+    data = cur.fetchall()
+
     search = False
     q = request.args.get('q')
     if q:
@@ -334,9 +340,11 @@ def test():
     pagination = Pagination(page=page,per_page=limit, total=total, record_name='data')
     return render_template("categories.html",data=data,pagination=pagination)
 
+
+
 @app.route("/search")
 def search():
-     # search = False
+     
     q = request.args.get('q')
     if q:
         search = True
@@ -354,6 +362,7 @@ def search():
     pagination = Pagination(page=page,per_page=limit, total=total, record_name='data')
     return render_template("productsview.html", pagination=pagination, data = data)
 
+
 @app.route("/products",methods=["POST","GET"])
 def products():
     cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
@@ -361,23 +370,19 @@ def products():
         search_word = request.form['query']
         print(search_word)
         if search_word == '':
-            query = "SELECT * FROM stores;"
-            cur.execute(query)
+            cur.execute("SELECT * FROM stores;")
             data = cur.fetchall()
-        else:    
-            query = " SELECT * FROM stores WHERE Item_Description LIKE '%{}%' OR Price LIKE '%{}%' OR Qty LIKE '%{}%' OR Category LIKE '%{}%' OR Item_Type LIKE '%{}%' ORDER BY Item_Description DESC LIMIT 20".format(search_word,search_word,search_word,search_word,search_word)
-            cur.execute(query)
+        else:  
+            #Results based on query  
+            cur.execute(" SELECT * FROM stores WHERE Item_Description LIKE '%{}%' UNION SELECT * FROM stores WHERE Item_Type LIKE '%{}%' UNION SELECT * FROM stores WHERE Category LIKE '%{}%'  UNION SELECT * FROM stores WHERE Department LIKE '%{}%'".format(search_word,search_word,search_word,search_word))
             numrows = int(cur.rowcount)
             data = cur.fetchall()
-            print(numrows)
-
-
-   
     return jsonify({'htmlresponse':  render_template("search.html",numrows=numrows, data=data)})
 
 @app.route("/geolocation")
 def geo():
     return render_template("geolocation.html")
+
 
 @app.route("/stores")
 def stores():
@@ -466,5 +471,9 @@ def acrostra():
     
     pagination = Pagination(page=page,per_page=limit, total=total, record_name='data')
     return render_template("Acrostra.html", pagination=pagination, data=data) 
+
+@app.route("/privacypolicy")
+def privacy():
+    return render_template("privacy.html")
 if __name__ == '__main__':
     app.run(port=500)

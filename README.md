@@ -7,3 +7,5 @@
 $pip install -r requirements.txt
 
 $Flask run
+
+run sql 

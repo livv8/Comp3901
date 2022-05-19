@@ -7,6 +7,8 @@
   
 </style>
 {% block content %}
+<a href="/geolocation" class="btn btn-success">Directions</a>
+
 <div class="container">
   <div class="jumbotron">
     <h1 class="display-4">Old Habour Books and Stationary</h1>
@@ -15,12 +17,13 @@
     <p>Contact:  (876) 745-3658</p>
   </div>
   <h2>Store Products</h2>
-
+  {{ pagination.info}}
   <table class="table" >
     {% for item in data %}
    
     <tbody>
       <tr>
+        <!-- <td><img src="{{item.image}}" alt=""></td> -->
         <td ><img src="static\images\pics\No_Image_Available.jpg" alt="" width="30%"></td>
         <td style="  height: 80px;
         text-align: center;
